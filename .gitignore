@@ -1,0 +1,12 @@
+# Ignorar arquivos do VSCode
+.vscode/
+
+# Ignorar dependências e cache
+node_modules/
+dist/
+build/
+
+# Ignorar arquivos do sistema Windows
+Thumbs.db
+desktop.ini
+AppData/
