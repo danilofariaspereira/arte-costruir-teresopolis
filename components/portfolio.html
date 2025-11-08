@@ -1,70 +1,110 @@
 <section class="portfolio" id="portfolio">
   <div class="portfolio__header">
     <span class="section-eyebrow">Portfólio</span>
-    <h2>Nosso processo do canteiro à entrega final</h2>
+    <h2>Experiência completa: do canteiro ao alto padrão</h2>
     <p>
-      Acompanhe obras em andamento e resultados já entregues que refletem a arquitetura autoral e o cuidado técnico da
-      Arte Construir.
+      Selecionamos projetos que demonstram nossa atuação integrada. Explore obras em andamento, residências exclusivas e
+      decks assinados pela Arte Construir.
     </p>
   </div>
 
-  <div class="portfolio__group">
-    <div class="portfolio__group-header">
-      <h3>Nossas obras em construção</h3>
-      <p>Canteiros ativos com foco em planejamento, segurança e eficiência.</p>
-    </div>
-    <div class="portfolio__grid">
-      <article class="portfolio-card">
-        <img src="assets/obra-01.png" alt="Estrutura de casa moderna em construção" />
-        <div class="portfolio-card__content">
-          <h4>Residência Horizonte</h4>
-          <p>Estrutura metálica e vedação em painéis termoacústicos para reduzir impacto ambiental.</p>
-        </div>
+  <div class="portfolio__cards">
+    <article class="portfolio-card">
+      <div class="portfolio-card__media">
+        <img src="assets/images/obra-01.png" alt="Estrutura de residência em construção" />
+      </div>
+      <div class="portfolio-card__content">
+        <h3>Obras em construção</h3>
+        <p>Gestão de obra completa com cronograma integrado, controle de qualidade e equipes certificadas.</p>
+        <button class="button" type="button" data-modal-target="modal-obras">Ver obras em andamento</button>
+      </div>
+    </article>
+
+    <article class="portfolio-card">
+      <div class="portfolio-card__media">
+        <img src="assets/images/luxo-01.png" alt="Sala de estar de alto padrão" />
+      </div>
+      <div class="portfolio-card__content">
+        <h3>Residências alto padrão</h3>
+        <p>Arquitetura autoral, interiores personalizados e tecnologia embarcada para experiências únicas.</p>
+        <button class="button" type="button" data-modal-target="modal-luxo">Ver residências exclusivas</button>
+      </div>
+    </article>
+
+    <article class="portfolio-card">
+      <div class="portfolio-card__media">
+        <img src="assets/images/dack-luxo-01.png" alt="Deck elevado com iluminação embutida" />
+      </div>
+      <div class="portfolio-card__content">
+        <h3>Decks assinados</h3>
+        <p>Estruturas externas com design autoral, integração com paisagismo e materiais de alta durabilidade.</p>
+        <button class="button" type="button" data-modal-target="modal-decks">Ver decks</button>
+      </div>
+    </article>
+  </div>
+
+  <div class="portfolio__differentials">
+    <h3>Nossos diferenciais</h3>
+    <div class="portfolio__differentials-grid">
+      <article class="differential-card">
+        <img src="assets/images/madeira-ecologica.avif" alt="Detalhe de madeira ecológica" />
+        <h4>Madeira com 50 anos de garantia</h4>
+        <p>Trabalhamos com fornecedores certificados e procedência controlada para garantir longevidade e segurança.</p>
       </article>
-      <article class="portfolio-card">
-        <img src="assets/obra-03.png" alt="Equipe trabalhando em obra de fachada comercial" />
-        <div class="portfolio-card__content">
-          <h4>Complexo Comercial Atlântico</h4>
-          <p>Fachada ventilada e iluminação natural planejada para economia de energia.</p>
-        </div>
+      <article class="differential-card">
+        <img src="assets/images/selo-verde.avif" alt="Selo verde de sustentabilidade" />
+        <h4>Selo verde</h4>
+        <p>Consultoria ambiental para minimizar impactos, reaproveitar recursos e alcançar certificações reconhecidas.</p>
       </article>
-      <article class="portfolio-card">
-        <img src="assets/planejamento-e-mentoria.jpg" alt="Profissionais analisando plantas arquitetônicas" />
-        <div class="portfolio-card__content">
-          <h4>Residencial Alto do Campo</h4>
-          <p>Execução acompanhada por BIM e cronograma integrado com fornecedores locais.</p>
-        </div>
+      <article class="differential-card">
+        <img src="assets/images/planejamento-e-mentoria.jpg" alt="Profissionais planejando obra" />
+        <h4>Planejamento integrado</h4>
+        <p>Metodologia própria que integra arquitetura, engenharia e fornecedores para previsibilidade na entrega.</p>
       </article>
     </div>
   </div>
 
-  <div class="portfolio__group">
-    <div class="portfolio__group-header">
-      <h3>Nossos resultados</h3>
-      <p>Projetos entregues com assinatura Arte Construir em cada detalhe.</p>
+  <div class="modal" data-modal-id="modal-obras" role="dialog" aria-modal="true" aria-labelledby="modal-obras-title">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__content">
+      <button class="modal__close" data-modal-close aria-label="Fechar galeria">×</button>
+      <h3 id="modal-obras-title">Obras em construção</h3>
+      <div class="modal__gallery">
+        <img src="assets/images/obra-01.png" alt="Obra Arte Construir 01" />
+        <img src="assets/images/obra-02.png" alt="Obra Arte Construir 02" />
+        <img src="assets/images/obra-03.png" alt="Obra Arte Construir 03" />
+        <img src="assets/images/obra-04.png" alt="Obra Arte Construir 04" />
+        <img src="assets/images/obra-05.png" alt="Obra Arte Construir 05" />
+        <img src="assets/images/obra-06.png" alt="Obra Arte Construir 06" />
+      </div>
     </div>
-    <div class="portfolio__grid">
-      <article class="portfolio-card">
-        <img src="assets/luxo-01.png" alt="Sala de estar com design contemporâneo" />
-        <div class="portfolio-card__content">
-          <h4>Casa Mirante</h4>
-          <p>Interiores integrados à vista panorâmica com mobiliário autoral e iluminação cênica.</p>
-        </div>
-      </article>
-      <article class="portfolio-card">
-        <img src="assets/dack-luxo-01.png" alt="Fachada residencial em madeira e concreto aparente" />
-        <div class="portfolio-card__content">
-          <h4>Refúgio Serra Azul</h4>
-          <p>Volume escalonado com madeira de reflorestamento e brises automatizados.</p>
-        </div>
-      </article>
-      <article class="portfolio-card">
-        <img src="assets/projetos-personalizados.png" alt="Profissional apresentando projeto finalizado" />
-        <div class="portfolio-card__content">
-          <h4>Showroom Arte Construir</h4>
-          <p>Experiência imersiva para clientes conhecerem acabamentos, tecnologias e parceiros.</p>
-        </div>
-      </article>
+  </div>
+
+  <div class="modal" data-modal-id="modal-luxo" role="dialog" aria-modal="true" aria-labelledby="modal-luxo-title">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__content">
+      <button class="modal__close" data-modal-close aria-label="Fechar galeria">×</button>
+      <h3 id="modal-luxo-title">Residências alto padrão</h3>
+      <div class="modal__gallery">
+        <img src="assets/images/luxo-01.png" alt="Residência luxo 01" />
+        <img src="assets/images/luxo-02.png" alt="Residência luxo 02" />
+        <img src="assets/images/luxo-03.png" alt="Residência luxo 03" />
+        <img src="assets/images/luxo-04.png" alt="Residência luxo 04" />
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" data-modal-id="modal-decks" role="dialog" aria-modal="true" aria-labelledby="modal-decks-title">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__content">
+      <button class="modal__close" data-modal-close aria-label="Fechar galeria">×</button>
+      <h3 id="modal-decks-title">Decks assinados</h3>
+      <div class="modal__gallery">
+        <img src="assets/images/dack-01.png" alt="Deck Arte Construir 01" />
+        <img src="assets/images/dack-luxo-01.png" alt="Deck Arte Construir 02" />
+        <img src="assets/images/dack-luxo-02.png" alt="Deck Arte Construir 03" />
+        <img src="assets/images/dack-luxo-03.png" alt="Deck Arte Construir 04" />
+      </div>
     </div>
   </div>
 </section>

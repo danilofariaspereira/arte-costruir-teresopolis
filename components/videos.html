@@ -1,51 +1,59 @@
 <section class="videos" id="videos">
   <div class="videos__header">
     <span class="section-eyebrow">Vídeos</span>
-    <h2>Histórias que inspiram novos projetos</h2>
-    <p>
-      Selecionamos conteúdos da Arte Construir e parceiros TWBrazil com depoimentos, bastidores e tour por obras
-      finalizadas.
-    </p>
+    <h2>Conheça um pouco das nossas obras e entenda como funciona a Arte Construir</h2>
+    <p>Seleção de conteúdos que mostram bastidores, processos e experiências das nossas entregas.</p>
   </div>
+
   <div class="videos__grid">
-    <article class="video-card">
-      <div class="video-card__player">
-        <iframe
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ"
-          title="Apresentação Arte Construir"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+    <article class="video-card" role="button" tabindex="0" data-modal-target="video-escadas"
+      data-video-url="https://www.youtube.com/embed/JNt89Vi6X3M?autoplay=1&mute=0&loop=1&playlist=JNt89Vi6X3M&rel=0&modestbranding=1&controls=0"
+      aria-label="Assistir vídeo institucional Arte Construir">
+      <div class="video-card__preview">
+        <img src="assets/images/escada-01.png" alt="Prévia de vídeo sobre escadas" />
+        <span class="video-card__icon" aria-hidden="true">▶</span>
       </div>
-      <h3>Apresentação Arte Construir</h3>
-      <p>Conheça nossa cultura, metodologia de projetos e visão sobre construção sustentável.</p>
     </article>
-    <article class="video-card">
-      <div class="video-card__player">
-        <iframe
-          src="https://www.youtube.com/embed/oHg5SJYRHA0?rel=0&autoplay=1&mute=1&loop=1&playlist=oHg5SJYRHA0"
-          title="Obra em destaque TWBrazil"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+    <article class="video-card" role="button" tabindex="0" data-modal-target="video-corporativo"
+      data-video-url="https://www.youtube.com/embed/JNt89Vi6X3M?autoplay=1&mute=0&loop=1&playlist=JNt89Vi6X3M&rel=0&modestbranding=1&controls=0"
+      aria-label="Assistir bastidores Arte Construir">
+      <div class="video-card__preview">
+        <img src="assets/images/execucao-de-obra-completa-projetos.jpg" alt="Prévia de vídeo corporativo" />
+        <span class="video-card__icon" aria-hidden="true">▶</span>
       </div>
-      <h3>Obra em destaque TWBrazil</h3>
-      <p>Tour guiado por uma obra corporativa realizada em parceria com a rede TWBrazil.</p>
     </article>
-    <article class="video-card">
-      <div class="video-card__player">
-        <iframe
-          src="https://www.youtube.com/embed/3GwjfUFyY6M?rel=0&autoplay=1&mute=1&loop=1&playlist=3GwjfUFyY6M"
-          title="Depoimento de clientes"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+    <article class="video-card" role="button" tabindex="0" data-modal-target="video-clientes"
+      data-video-url="https://www.youtube.com/embed/UUEQmGw9clM?autoplay=1&mute=0&loop=1&playlist=UUEQmGw9clM&rel=0&modestbranding=1&controls=0"
+      aria-label="Assistir depoimento Arte Construir">
+      <div class="video-card__preview">
+        <img src="assets/images/reuniao-de-trabalho-projetos.jpg" alt="Prévia de depoimento de clientes" />
+        <span class="video-card__icon" aria-hidden="true">▶</span>
       </div>
-      <h3>Depoimento de clientes</h3>
-      <p>Clientes contam como foi o processo de sonhar e construir com a Arte Construir.</p>
     </article>
+  </div>
+
+  <div class="modal modal--video" data-modal-id="video-escadas" role="dialog" aria-modal="true"
+    aria-label="Vídeo escadas">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__content modal__content--video">
+      <button class="modal__close" data-modal-close aria-label="Fechar vídeo">×</button>
+      <div class="modal__video" data-modal-video-container></div>
+    </div>
+  </div>
+  <div class="modal modal--video" data-modal-id="video-corporativo" role="dialog" aria-modal="true"
+    aria-label="Vídeo corporativo">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__content modal__content--video">
+      <button class="modal__close" data-modal-close aria-label="Fechar vídeo">×</button>
+      <div class="modal__video" data-modal-video-container></div>
+    </div>
+  </div>
+  <div class="modal modal--video" data-modal-id="video-clientes" role="dialog" aria-modal="true"
+    aria-label="Vídeo clientes">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__content modal__content--video">
+      <button class="modal__close" data-modal-close aria-label="Fechar vídeo">×</button>
+      <div class="modal__video" data-modal-video-container></div>
+    </div>
   </div>
 </section>
