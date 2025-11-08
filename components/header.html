@@ -1,7 +1,6 @@
 ﻿<div class="navbar">
   <div class="navbar__brand">
     <img src="assets/images/logo-arte-construir-02.png" alt="Logo Arte Construir" />
-    <span>Arte Construir</span>
   </div>
   <nav class="navbar__menu">
     <a href="index.html" class="navbar__link">Home</a>
@@ -10,4 +9,28 @@
     <a href="videos.html" class="navbar__link">Vídeos</a>
   </nav>
   <a class="navbar__contact" href="#contato">Fale Conosco</a>
+  <button class="navbar__toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-navbar-toggle>
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="navbar__mobile-backdrop" data-navbar-backdrop hidden></div>
+  <div class="navbar__mobile" data-navbar-mobile hidden>
+    <div class="navbar__mobile-header">
+      <div class="navbar__mobile-brand">
+        <img src="assets/images/logo-arte-construir-02.png" alt="Logo Arte Construir" />
+      </div>
+      <button class="navbar__mobile-close" type="button" aria-label="Fechar menu" data-navbar-close>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav class="navbar__mobile-menu">
+      <a href="index.html" class="navbar__link">Home</a>
+      <a href="portfolio.html" class="navbar__link">Portfólio</a>
+      <a href="partners.html" class="navbar__link">Parceiros</a>
+      <a href="videos.html" class="navbar__link">Vídeos</a>
+    </nav>
+    <a class="navbar__mobile-contact" href="#contato">Fale Conosco</a>
+  </div>
 </div>

@@ -13,6 +13,81 @@
 };
 
 let lastModalTrigger = null;
+let activeMobileNav = null;
+
+const initMobileNavbar = (container) => {
+  const toggle = container.querySelector('[data-navbar-toggle]');
+  const mobile = container.querySelector('[data-navbar-mobile]');
+  const closeButton = container.querySelector('[data-navbar-close]');
+  const backdrop = container.querySelector('[data-navbar-backdrop]');
+
+  if (!toggle || !mobile || !backdrop) {
+    return;
+  }
+
+  const focusableSelectors = 'a, button';
+  const getFocusable = () => mobile.querySelectorAll(focusableSelectors);
+
+  const close = (returnFocus = true) => {
+    if (!container.classList.contains('navbar--open')) {
+      return;
+    }
+
+    container.classList.remove('navbar--open');
+    toggle.setAttribute('aria-expanded', 'false');
+    mobile.setAttribute('hidden', '');
+    backdrop.setAttribute('hidden', '');
+    document.body.classList.remove('navbar-open');
+
+    if (returnFocus) {
+      toggle.focus();
+    }
+
+    if (activeMobileNav && activeMobileNav.container === container) {
+      activeMobileNav = null;
+    }
+  };
+
+  const open = () => {
+    if (activeMobileNav) {
+      activeMobileNav.close(false);
+    }
+
+    container.classList.add('navbar--open');
+    toggle.setAttribute('aria-expanded', 'true');
+    mobile.removeAttribute('hidden');
+    backdrop.removeAttribute('hidden');
+    document.body.classList.add('navbar-open');
+
+    const first = getFocusable()[0];
+    if (first) {
+      first.focus();
+    }
+
+    activeMobileNav = { container, close };
+  };
+
+  toggle.addEventListener('click', () => {
+    if (container.classList.contains('navbar--open')) {
+      close();
+    } else {
+      open();
+    }
+  });
+
+  closeButton?.addEventListener('click', () => close());
+  backdrop.addEventListener('click', () => close());
+
+  mobile.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => close(false));
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      close(false);
+    }
+  });
+};
 
 const toggleBodyScroll = () => {
   const hasOpenModal = document.querySelector('.modal.is-open');
@@ -93,6 +168,11 @@ const handleDocumentClick = (event) => {
 
 const handleDocumentKeydown = (event) => {
   if (event.key === 'Escape') {
+    if (activeMobileNav) {
+      activeMobileNav.close();
+      return;
+    }
+
     const modal = document.querySelector('.modal.is-open');
     if (modal) {
       closeModal(modal);
@@ -114,6 +194,18 @@ const handleDocumentKeydown = (event) => {
 };
 
 const handleDocumentFocus = (event) => {
+  if (activeMobileNav) {
+    const mobile = activeMobileNav.container.querySelector('[data-navbar-mobile]');
+    const toggle = activeMobileNav.container.querySelector('[data-navbar-toggle]');
+    if (mobile && toggle && !mobile.contains(event.target) && !toggle.contains(event.target)) {
+      const focusable = mobile.querySelector('a, button');
+      if (focusable) {
+        focusable.focus();
+        return;
+      }
+    }
+  }
+
   const modal = document.querySelector('.modal.is-open');
   if (!modal) {
     return;
@@ -144,6 +236,7 @@ const loadComponent = async (element) => {
 
     if (componentName === 'header') {
       highlightActiveNav();
+      initMobileNavbar(element);
     }
 
     if (componentName === 'footer') {
