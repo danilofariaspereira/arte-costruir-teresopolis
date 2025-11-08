@@ -1,14 +1,68 @@
-﻿const highlightActiveNav = () => {
-  const navLinks = document.querySelectorAll('.navbar__link');
-  const path = window.location.pathname.split('/').pop() || 'index.html';
+﻿const getCurrentPageKey = () => {
+  const path = window.location.pathname.replace(/\/+$/, '');
+  if (!path || path === '') {
+    return 'home';
+  }
+  if (path === '/') {
+    return 'home';
+  }
+
+  const segment = path.split('/').filter(Boolean).pop();
+  const map = {
+    index: 'home',
+    'index.html': 'home',
+    portfolio: 'portfolio',
+    'portfolio.html': 'portfolio',
+    partners: 'partners',
+    'partners.html': 'partners',
+    videos: 'videos',
+    'videos.html': 'videos',
+    faq: 'faq',
+    'faq.html': 'faq',
+  };
+
+  return map[segment] || 'home';
+};
+
+const highlightActiveNav = () => {
+  const navLinks = document.querySelectorAll('.navbar__link[data-page]');
+  const currentPage = getCurrentPageKey();
 
   navLinks.forEach((link) => {
-    const linkPath = link.getAttribute('href').split('#')[0];
-    if (linkPath === path || (path === '' && linkPath === 'index.html')) {
+    const page = link.dataset.page;
+    if (page === currentPage) {
       link.classList.add('is-active');
     } else {
       link.classList.remove('is-active');
     }
+  });
+};
+
+const configureNavLinks = (container) => {
+  const navLinks = container.querySelectorAll('.navbar__link[data-page]');
+  if (!navLinks.length) {
+    return;
+  }
+
+  const isLocal =
+    window.location.protocol === 'file:' ||
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1';
+
+  const getHrefForPage = (page) => {
+    if (page === 'home') {
+      return isLocal ? 'index.html' : '/';
+    }
+    return isLocal ? `${page}.html` : `/${page}`;
+  };
+
+  navLinks.forEach((link) => {
+    const page = link.dataset.page;
+    if (!page) {
+      return;
+    }
+    const target = getHrefForPage(page);
+    link.setAttribute('href', target);
   });
 };
 
@@ -235,6 +289,7 @@ const loadComponent = async (element) => {
     element.innerHTML = template;
 
     if (componentName === 'header') {
+      configureNavLinks(element);
       highlightActiveNav();
       initMobileNavbar(element);
     }
