@@ -335,6 +335,7 @@ const initChatbot = (container) => {
     const optionKey = button.dataset.chatbotOption;
     const label = button.dataset.chatbotLabel || button.textContent.trim();
     const whatsappMessage = button.dataset.chatbotWhatsapp || label;
+    const phoneTarget = button.dataset.chatbotPhone || whatsappNumber;
     const config = chatbotOptionConfig[optionKey] || chatbotOptionConfig.info;
 
     optionButtons.forEach((item) => {
@@ -353,7 +354,7 @@ const initChatbot = (container) => {
     const action = document.createElement('a');
     action.className = 'chatbot__whatsapp-button';
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    action.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    action.href = `https://wa.me/${phoneTarget}?text=${encodedMessage}`;
     action.target = '_blank';
     action.rel = 'noreferrer noopener';
     action.innerHTML = `
