@@ -1,0 +1,111 @@
+<div
+  class="chatbot"
+  data-chatbot
+  data-chatbot-whatsapp="5521999999999"
+  data-chatbot-avatar="assets/images/icone-arte-construir.png"
+>
+  <button class="chatbot__toggle" type="button" data-chatbot-toggle aria-label="Abrir Chat Bob">
+    <img src="assets/images/icone-arte-construir.png" alt="Abrir Chat Bob" />
+    <span class="chatbot__sr-only">Abrir Chat Bob</span>
+  </button>
+
+  <div class="chatbot__window" data-chatbot-window hidden>
+    <header class="chatbot__header">
+      <div class="chatbot__header-content">
+        <img
+          class="chatbot__header-logo"
+          src="assets/images/icone-arte-construir.png"
+          alt="Logo Arte Construir"
+        />
+        <div class="chatbot__header-text">
+          <h3>Arte Construir</h3>
+          <div class="chatbot__status">
+            <span class="chatbot__status-dot" aria-hidden="true"></span>
+            <span>Online</span>
+          </div>
+        </div>
+      </div>
+      <button
+        class="chatbot__close"
+        type="button"
+        data-chatbot-close
+        aria-label="Minimizar chat"
+        title="Minimizar chat"
+      >
+        &times;
+      </button>
+    </header>
+
+    <div class="chatbot__body">
+      <div class="chatbot__messages" data-chatbot-messages>
+        <div class="chatbot__message chatbot__message--bot chatbot__message--static">
+          <img
+            class="chatbot__avatar"
+            src="assets/images/icone-arte-construir.png"
+            alt="Arte Construir"
+          />
+          <div class="chatbot__message-content">
+            <strong>Seja bem-vindo à Arte Construir!</strong>
+            <span>Como posso ajudar você hoje?</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chatbot__options" data-chatbot-options>
+        <button
+          class="chatbot__option"
+          type="button"
+          data-chatbot-option="info"
+          data-chatbot-label="Tenho dúvidas e gostaria de saber mais informações"
+          data-chatbot-whatsapp="Olá, Arte Construir. Vim através do seu site e gostaria de saber mais informações."
+        >
+          <strong>Tenho dúvidas e gostaria de saber mais informações</strong>
+        </button>
+
+        <button
+          class="chatbot__option"
+          type="button"
+          data-chatbot-option="projetos"
+          data-chatbot-label="Queria saber mais sobre os projetos"
+          data-chatbot-whatsapp="Vim através do seu site e gostaria de saber mais sobre os projetos."
+        >
+          <strong>Queria saber mais sobre os projetos</strong>
+        </button>
+
+        <button
+          class="chatbot__option"
+          type="button"
+          data-chatbot-option="leticia"
+          data-chatbot-label="Falar com Leticia - Arquiteta"
+          data-chatbot-whatsapp="Olá, Leticia. Vim através do site Arte Construir e gostaria de entender mais sobre o seu trabalho."
+        >
+          <strong>Falar com Leticia - Arquiteta</strong>
+        </button>
+
+        <button
+          class="chatbot__option"
+          type="button"
+          data-chatbot-option="tiago"
+          data-chatbot-label="Falar com Tiago - Corretor"
+          data-chatbot-whatsapp="Olá, Tiago. Vim através do site Arte Construir e gostaria de saber mais sobre o seu trabalho."
+        >
+          <strong>Falar com Tiago - Corretor</strong>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="chatbot__back-to-top"
+    type="button"
+    data-chatbot-back-to-top
+    aria-label="Voltar ao topo"
+    title="Voltar ao topo"
+  >
+    <svg viewBox="0 0 24 24" class="chatbot__back-to-top-icon" aria-hidden="true">
+      <path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+    </svg>
+    <span class="chatbot__sr-only">Voltar ao topo</span>
+  </button>
+</div>
+
