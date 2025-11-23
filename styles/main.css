@@ -1434,12 +1434,22 @@ body.modal-open {
 }
 
 .partner-card__tag {
+  display: inline-block;
   padding: 8px 16px;
   background: rgba(21, 64, 101, 0.1);
   border-radius: var(--radius-pill);
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--color-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-card__tag:hover {
+  background: rgba(21, 64, 101, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(21, 64, 101, 0.15);
 }
 
 .partner-card--person img {
