@@ -17,6 +17,8 @@
     'partners.html': 'partners',
     videos: 'videos',
     'videos.html': 'videos',
+    blog: 'blog',
+    'blog.html': 'blog',
     faq: 'faq',
     'faq.html': 'faq',
   };

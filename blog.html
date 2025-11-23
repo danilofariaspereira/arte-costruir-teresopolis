@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/" />
+  <title>Blog | Arte Construir - Construção Civil, Sustentabilidade e Inovação</title>
+  <meta name="description" content="Acompanhe artigos sobre construção civil sustentável, acompanhamento de obras, tecnologia na construção e muito mais. Arte Construir em Teresópolis." />
+  <script>
+    (function () {
+      var path = window.location.pathname;
+      if (!path || !path.endsWith('/')) {
+        return;
+      }
+      var segments = path.split('/').filter(Boolean);
+      var lastSegment = segments[segments.length - 1];
+      var pages = ['blog'];
+      if (lastSegment && pages.indexOf(lastSegment) !== -1) {
+        var prefix = path.slice(0, -1);
+        window.location.replace(prefix + '.html' + window.location.search + window.location.hash);
+      }
+    })();
+  </script>
+  <link rel="icon" type="image/png" href="assets/images/icone-arte-construir.png" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div id="app">
+    <header data-component="header"></header>
+    <main>
+      <section data-component="blog-banner"></section>
+      <section data-component="blog"></section>
+    </main>
+    <footer data-component="footer"></footer>
+  </div>
+  <aside data-component="chat-bob"></aside>
+  <script type="module" src="scripts/main.js" defer></script>
+</body>
+</html>
+
